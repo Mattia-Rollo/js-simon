@@ -62,7 +62,7 @@ const numeriAschermo = document.getElementById('numeri');
 const numeriUtente = document.getElementById('numeriUtente');
 const btn = document.getElementById('btn');
 const risultato = document.getElementById('risultato');
- 
+ const timeHtml = document.getElementById('time');
 const listaRandomNumeri = [];
 const numeriMax = 5;
 
@@ -76,25 +76,28 @@ while(listaRandomNumeri.length<numeriMax){
 console.log(listaRandomNumeri);
 
 
-let counter = 3;
+let counter = 10;
 console.log(counter);
 
 numeriAschermo.innerHTML = `${listaRandomNumeri.join(' ')}`;
 
-
 const intervall = setInterval(() => {
     counter--;
+    timeHtml.innerHTML = counter;
     console.log(counter);
     if(counter == 0) {
         numeriAschermo.innerHTML = 'riscrivi i numeri';
+        timeHtml.innerHTML = '';
         clearInterval(intervall);
     }
 }, 1000);
 
 let tentativi = 1;
+
 btn.addEventListener('click',function (){
     numeriAschermo.innerHTML = '';
     const listaNumeriUtente = numeriUtente.value.split(" ");
+    
     let RisposteGiuste = 0;
     
     risultato.classList.add('bg-dark');
