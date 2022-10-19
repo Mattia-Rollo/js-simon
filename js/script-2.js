@@ -62,7 +62,7 @@ const numeriAschermo = document.getElementById('numeri');
 const numeriUtente = document.getElementById('numeriUtente');
 const btn = document.getElementById('btn');
 const risultato = document.getElementById('risultato');
- const timeHtml = document.getElementById('time');
+const timeHtml = document.getElementById('time');
 const listaRandomNumeri = [];
 const numeriMax = 5;
 
