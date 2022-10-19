@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+header, footer {
+    height: 80px;
+    box-shadow: ;
+}
+main {
+    background-color: rgb(129, 207, 200);
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+h2 {
+    color: rgb(0, 0, 0);
+}
+.grid {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+    /* border: 1px solid black; */
+}
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    cursor: pointer;
+}
+.green {
+    background-color: rgb(72, 187, 91);
+}
+.red {
+    background-color: rgb(167, 0, 0);
+}
+.text-green {
+    color: rgb(47, 208, 47);
+}
+.no-click {
+    pointer-events: none;
+}
