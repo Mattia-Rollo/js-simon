@@ -108,7 +108,13 @@ btn.addEventListener('click',function (){
         
     }
     console.log(RisposteGiuste);
+    risultato.classList.remove('d-none');
     risultato.innerHTML = 'numeri indovinati: ' + RisposteGiuste;
+    if(RisposteGiuste == 5){
+        risultato.classList.remove('bg-dark');
+        risultato.classList.add('bg-success');
+        risultato.innerHTML = 'Sei un campione!!';
+    }
 
 
 
