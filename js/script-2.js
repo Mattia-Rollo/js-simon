@@ -91,22 +91,25 @@ const intervall = setInterval(() => {
     }
 }, 1000);
 
+let tentativi = 1;
 btn.addEventListener('click',function (){
     numeriAschermo.innerHTML = '';
     const listaNumeriUtente = numeriUtente.value.split(" ");
-    
     let RisposteGiuste = 0;
     
+    risultato.classList.add('bg-dark');
+    risultato.classList.toggle('bg-')
     console.log(listaNumeriUtente);
     for(let i = 0; i < listaNumeriUtente.length; i++){
         console.log(parseInt(listaNumeriUtente[i]));
         if(listaRandomNumeri.includes(parseInt(listaNumeriUtente[i]))) {
-            numeriAschermo.innerHTML += listaNumeriUtente[i] + ' ';
+            numeriAschermo.innerHTML = listaRandomNumeri.join(' ');
             console.log('lista' + listaNumeriUtente[i]);
             RisposteGiuste ++;
         }
         
     }
+    tentativi++;
     console.log(RisposteGiuste);
     risultato.classList.remove('d-none');
     risultato.innerHTML = 'numeri indovinati: ' + RisposteGiuste;
@@ -115,11 +118,15 @@ btn.addEventListener('click',function (){
         risultato.classList.add('bg-success');
         risultato.innerHTML = 'Sei un campione!!';
     }
+    if(tentativi == 2) {
+        ps.classList.remove('d-none');
+    }
 
 
 
 });
 
+const ps = document.getElementById('ps');
 
 
 

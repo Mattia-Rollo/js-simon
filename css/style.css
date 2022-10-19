@@ -42,3 +42,6 @@ h2 {
 .no-click {
     pointer-events: none;
 }
+.form-control {
+    width: 200px;
+}
