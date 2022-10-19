@@ -61,7 +61,8 @@
 const numeriAschermo = document.getElementById('numeri');
 const numeriUtente = document.getElementById('numeriUtente');
 const btn = document.getElementById('btn');
-
+const risultato = document.getElementById('risultato');
+ 
 const listaRandomNumeri = [];
 const numeriMax = 5;
 
@@ -94,6 +95,7 @@ btn.addEventListener('click',function (){
     numeriAschermo.innerHTML = '';
     const listaNumeriUtente = numeriUtente.value.split(" ");
     
+    let RisposteGiuste = 0;
     
     console.log(listaNumeriUtente);
     for(let i = 0; i < listaNumeriUtente.length; i++){
@@ -101,9 +103,12 @@ btn.addEventListener('click',function (){
         if(listaRandomNumeri.includes(parseInt(listaNumeriUtente[i]))) {
             numeriAschermo.innerHTML += listaNumeriUtente[i] + ' ';
             console.log('lista' + listaNumeriUtente[i]);
+            RisposteGiuste ++;
+        }
+        
     }
-
-}
+    console.log(RisposteGiuste);
+    risultato.innerHTML = 'numeri indovinati: ' + RisposteGiuste;
 
 
 
